@@ -6,7 +6,7 @@
     var notes = this.notelist.getNotes();
 
     var htmlString = "<ul>" + notes.map(function (note) {
-      return "<li><div>" + note.getText() + "</div></li>"
+      return "<li><div>" + note.getText() + "</div></li>";
     }).join("") + "</ul>";
     return htmlString;
   };
