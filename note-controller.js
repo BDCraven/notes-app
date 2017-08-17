@@ -5,15 +5,15 @@
 
   }
 
-  NoteController.prototype.getsHtml = function () {
+  NoteController.prototype.insertHtml = function () {
     var htmlView = this.noteListView.viewHTML();
     document.getElementById('app').innerHTML = htmlView;
   };
 
   exports.NoteController = NoteController;
 })(this);
-
-var noteList = new NoteList;
-noteList.createNote("Favourite drink: seltzer");
-var noteController = new NoteController(noteList);
-noteController.getsHtml();
+//
+// var noteList = new NoteList;
+// noteList.createNote("Favourite drink: seltzer");
+// var noteController = new NoteController(noteList);
+// noteController.getsHtml();
