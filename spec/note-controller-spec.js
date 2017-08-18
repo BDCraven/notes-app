@@ -8,12 +8,30 @@ testNoteControllerCreation();
 
 (function(exports) {
   function testNoteControllerInsertsHTML() {
-    var noteList = new NoteList();
-    noteList.createNote("Favourite drink: seltzer");
+
+    function NoteDouble() {}
+
+    NoteDouble.prototype = {
+      getText: function() {
+        return 'Favourite drink: seltzer';
+      }
+    };
+
+    function NoteListDouble() {}
+
+    NoteListDouble.prototype = {
+      getNotes: function() {
+        return [note];
+      },
+    };
+
+    var note = new NoteDouble();
+    var noteList = new NoteListDouble();
     var noteController = new NoteController(noteList);
+    var expectedReturn = "<ul><li><div>Favourite drink: seltzer</div></li></ul>";
     noteController.insertHtml();
-    var actualInnerHTML = document.getElementById('app').innerHTML;
-    assert.isEqual(actualInnerHTML, "<ul><li><div>Favourite drink: seltzer</div></li></ul>");
+    var actualReturn = document.getElementById('app').innerHTML;
+    assert.isEqual(actualReturn, expectedReturn);
   }
   testNoteControllerInsertsHTML();
 })(this);
