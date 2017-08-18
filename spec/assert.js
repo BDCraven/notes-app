@@ -32,7 +32,7 @@ function testEquality() {
 }
 testEquality();
 
-function testEquality() {
-  assert.isEqual(1,2);
-}
-testEquality();
+// function testEquality() {
+//   assert.isEqual(1,2);
+// }
+// testEquality();
